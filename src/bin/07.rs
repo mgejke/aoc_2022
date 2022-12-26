@@ -41,7 +41,7 @@ fn get_fs(input: &str) -> HashMap<PathBuf, Vec<Entry>> {
         } else {
             let dir_name = row.next().unwrap();
             let new_dir = current.join(dir_name);
-            fs.entry(new_dircar).or_default();
+            fs.entry(new_dir.clone()).or_default();
             fs.entry(current.clone())
                 .or_default()
                 .push(Entry::Folder(new_dir.clone()));
